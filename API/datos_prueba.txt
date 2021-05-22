@@ -1,0 +1,10 @@
+{
+    "nombre":"Edison",
+    "apellido":"Vega",
+    "sexo":"M",
+    "telefono":"315 928 5046",
+    "direccion":"Calle siempreviva 123",
+    "email":"edison.vegaluc@gmail.com",
+    "password":"1234",
+    "pactivo":"true"
+}
