@@ -1,10 +1,10 @@
-package sb.techcamp.bankapi.service;
+package sb.techcamp.bankapi.service.old;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sb.techcamp.bankapi.exception.UserNotFoundException;
 import sb.techcamp.bankapi.model.Client;
-import sb.techcamp.bankapi.repository.ClientRepository;
+import sb.techcamp.bankapi.model.repository.ClientRepository;
 
 import java.util.List;
 

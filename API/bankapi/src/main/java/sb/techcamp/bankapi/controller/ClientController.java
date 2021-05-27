@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sb.techcamp.bankapi.model.Client;
-import sb.techcamp.bankapi.service.ClientService;
+import sb.techcamp.bankapi.service.old.ClientService;
 
 import java.util.List;
 
@@ -18,6 +18,7 @@ public class ClientController {
         this.clientService = clientService;
     }
 
+    // Get responses
     @GetMapping("/all")
     public ResponseEntity<List<Client>> getAllClients (){
         List<Client> clients = clientService.findAllClients();
@@ -30,12 +31,14 @@ public class ClientController {
         return new ResponseEntity<>(client, HttpStatus.OK);
     }
 
+    // Post responses
     @PostMapping("/add")
     public ResponseEntity<Client> addClient(@RequestBody Client client){
         Client newClient = clientService.addClient(client);
         return new ResponseEntity<>(newClient, HttpStatus.CREATED);
     }
 
+    // Put responses
     @PutMapping("/update")
     public ResponseEntity<Client> updateClient(@RequestBody Client client){
         if(client.getClientId() == null) {
@@ -47,6 +50,7 @@ public class ClientController {
         }
     }
 
+    // Deletes responses
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Client> deleteClient(@PathVariable("id") Long id){
         clientService.deleteClient(id);
